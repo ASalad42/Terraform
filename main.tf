@@ -25,7 +25,7 @@ resource "aws_internet_gateway" "app-gw" {
   vpc_id = aws_vpc.ayanle_terraform_vpc.id
 
   tags = {
-    Name = "main"
+    Name = "ayanle-terra-ig"
   }
 }
 # create public subnet
@@ -36,7 +36,7 @@ resource "aws_subnet" "ayanle_app_sn" {
 	map_public_ip_on_launch = "true"  
 
 	tags = {
-		Name = "tr_ayanle_app"
+		Name = "terra_ayanle_app"
 	}
 
  }
@@ -45,12 +45,17 @@ resource "aws_subnet" "ayanle_app_sn" {
 resource "aws_route_table" "public-app" {
   vpc_id = aws_vpc.ayanle_terraform_vpc.id
 
+    tags = {
+		Name = "terra_ayanle_rt"
+	}
 }
 # subnet association
 
 resource "aws_route_table_association" "a" {
   subnet_id      = aws_subnet.ayanle_app_sn.id
   route_table_id = aws_route_table.public-app.id
+
+  
 }
 
 # init and download required packages 
