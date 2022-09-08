@@ -10,6 +10,32 @@ provider "aws" {
 }
 
 
+# add vpc 
+resource "aws_vpc" "ayanle_terraform_vpc" {
+	cidr_block = "10.0.0.0/16"
+	instance_tenancy = "default"
+
+	tags = {
+		Name = "ayanle-terraform-vpc"
+	}
+}
+
+# internet gateway 
+
+# create public subnet
+
+resource "aws_subnet" "ayanle_app_sn" {
+	vpc_id = aws_vpc.ayanle_terraform_vpc.id
+	cidr_block = "10.0.3.0/24"
+	map_public_ip_on_launch = "true"  
+
+	tags = {
+		Name = "tr_ayanle_app"
+	}
+
+ }
+
+
 # 
 
 # init and download required packages 
@@ -22,7 +48,7 @@ provider "aws" {
 resource "aws_instance" "app_instance" {   
 
 # using which ami
-    ami= "ami-0b47105e3d7fc023e"
+    ami= "ami-082ca05f0b58358b8"
 
 # instance type
     instance_type = "t2.micro"

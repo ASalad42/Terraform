@@ -116,4 +116,8 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 
 ![image](https://user-images.githubusercontent.com/104793540/189126851-2fe99d12-7348-460d-99d7-1e7162b85d04.png)
 
-- a
+under heading off VPC virtual private cloud 
+
+- vpc - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
+- subnet - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
+- igw - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/internet_gateway
