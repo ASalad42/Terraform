@@ -21,7 +21,13 @@ resource "aws_vpc" "ayanle_terraform_vpc" {
 }
 
 # internet gateway 
+resource "aws_internet_gateway" "app-gw" {
+  vpc_id = aws_vpc.ayanle_terraform_vpc.id
 
+  tags = {
+    Name = "main"
+  }
+}
 # create public subnet
 
 resource "aws_subnet" "ayanle_app_sn" {
@@ -35,8 +41,17 @@ resource "aws_subnet" "ayanle_app_sn" {
 
  }
 
+# route table 
+resource "aws_route_table" "public-app" {
+  vpc_id = aws_vpc.ayanle_terraform_vpc.id
 
-# 
+}
+# subnet association
+
+resource "aws_route_table_association" "a" {
+  subnet_id      = aws_subnet.ayanle_app_sn.id
+  route_table_id = aws_route_table.public-app.id
+}
 
 # init and download required packages 
 # terraform init 
