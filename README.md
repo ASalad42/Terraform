@@ -41,9 +41,6 @@ REF: https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-
 - You can commit your configurations to version control to safely collaborate on infrastructure.
 
 
-### how to orchestrate with Terraform using IaC
-
-
 ### Installing terraform 
 
 - https://chocolatey.org/install
