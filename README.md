@@ -116,6 +116,18 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 
 ![image](https://user-images.githubusercontent.com/104793540/189126851-2fe99d12-7348-460d-99d7-1e7162b85d04.png)
 
+#### Commands 
+
+- `terraform init` in the directory that you've made the 'main.tf' file
+- `terraform plan` checks code, always do first to check your code before actually launching whatever your doing. Using the whole 'measure twice, cut one' methodology
+- `terraform apply` to launch your instance, as configured in your main.tf file.
+- `terraform destroy` to delete your instance
+
+Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
+
+
+### VPC with Terraform
+
 under heading off VPC virtual private cloud 
 
 - vpc - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
