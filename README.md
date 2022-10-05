@@ -61,6 +61,7 @@ securing aws keys while using terraform:
  
 ![image](https://user-images.githubusercontent.com/104793540/189106192-b9b302ac-a2c8-4072-be02-6262b5d205de.png)
 
+### Creating terraform script 
 - create main.tf file 
 - who is cloud provider and region > terraform init
 - terraform init 
@@ -126,9 +127,16 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
 
 
-### VPC with Terraform
+### EC2 Instance with Configured: VPC,Subnets,Internet Gateway and Route Tables
+- Perform the steps below in main.tf in order to successfuly launch of EC2 instance with configured network settings
+- Create VPC
+- Create public (app) and private (db) subnets within vpc. Used: 10.0.11.0/24 / 10.0.22.0/24 respectively.
+- Interent gateway must be provisioned witin VPC.
+- Routes tables for both subnets must be created.
+- Association for subnets the route tables must be performed.
+- Create security groups for ingress and egress routes.
+- Create the EC2 instance within the VPC.
 
-under heading off VPC virtual private cloud 
 
 - vpc - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
 
@@ -139,3 +147,8 @@ under heading off VPC virtual private cloud
 ![image](https://user-images.githubusercontent.com/104793540/189158887-8530169f-38ce-4aa5-9b1e-f7f3318c6b4b.png)
 
 - igw - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/internet_gateway
+
+
+## create variable.tf file for abstraction
+
+To minimise displaying any potential data, refactor the main.tf script by creating a new variable.tf script defining all the key parameters so only necessary information is displayed. The variable script must be added .gitignore file.
