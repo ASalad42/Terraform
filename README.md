@@ -25,7 +25,6 @@ REF: https://apiumhub.com/tech-blog-barcelona/infrastructure-as-code-benefits-an
 
 ![image](https://user-images.githubusercontent.com/104793540/189090681-034f8119-7934-4dfa-b8d9-b31fafcd2800.png)
 
-
 REF: https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac
 ## What is Terraform and How it Works 
 
