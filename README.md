@@ -39,6 +39,13 @@ REF: https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-
 - Terraform's state allows you to track resource changes throughout your deployments.
 - You can commit your configurations to version control to safely collaborate on infrastructure.
 
+### IAC (infastructure orchestration = terraform) & Configuration Management (ansible) = Friends 
+
+![image](https://user-images.githubusercontent.com/104793540/197222488-c908eb92-3425-42b2-acb9-84d69485e33e.png)
+
+ Combining Terraform and CM tools. Terraform deploy infrastructure initially and Ansible installs and updates software:
+ 
+ ![image](https://user-images.githubusercontent.com/104793540/197298304-3759c48c-425f-4a42-b4db-63e3a9df4719.png)
 
 ### Installing terraform 
 
