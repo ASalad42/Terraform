@@ -1,5 +1,7 @@
 # IaC with Terraform 
 
+
+![image](https://user-images.githubusercontent.com/104793540/197299626-af56ea45-e547-49eb-a2f8-fe005f932303.png)
 ![image](https://user-images.githubusercontent.com/104793540/189126425-2554fc30-88f7-4ef4-a691-0daa34521972.png)
 
 ## What is IaC and benefits
@@ -29,6 +31,14 @@ REF: https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-
 ## What is Terraform and How it Works 
 
 **Terraform is HashiCorp's infrastructure as code tool.** It lets you define resources and infrastructure in human-readable, declarative configuration files, and manages your infrastructure's lifecycle
+
+Terraform creates and manages resources on cloud platforms and other services through their application programming interfaces (APIs). Providers enable Terraform to work with virtually any platform or service with an accessible API.
+
+The core Terraform workflow consists of three stages:
+
+- **Write:** You define resources, which may be across multiple cloud providers and services. For example, you might create a configuration to deploy an application on virtual machines in a Virtual Private Cloud (VPC) network with security groups and a load balancer.
+- **Plan:** Terraform creates an execution plan describing the infrastructure it will create, update, or destroy based on the existing infrastructure and your configuration.
+- **Apply:** On approval, Terraform performs the proposed operations in the correct order, respecting any resource dependencies. For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
 
 ![image](https://user-images.githubusercontent.com/104793540/189092077-a22b97c0-11a3-4624-ab09-dc1922205a59.png)
 
@@ -67,7 +77,7 @@ securing aws keys while using terraform:
 ### Creating terraform script 
 - create main.tf file 
 - who is cloud provider and region > terraform init
-- terraform init 
+- `terraform init`
 - create block of code to launch ec2 server 
 
 ```
@@ -109,12 +119,12 @@ resource "aws_instance" "app_instance" {
 }
 ```
 
-- terraform plan - always do first to check syntax etc etc 
-- terraform apply - launch ec2
+- `terraform plan` - always do first to check syntax etc etc 
+- `terraform apply` - launch ec2
 
 ![image](https://user-images.githubusercontent.com/104793540/189106442-d8736188-052f-47ba-a797-2c042e9b4bfb.png)
 
-- terraform destroy > yes - deletes ec2
+- `terraform destroy` > yes - deletes ec2
 - attach pem file to ec2 created from terraform 
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair
 
