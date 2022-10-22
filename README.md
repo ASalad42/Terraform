@@ -68,6 +68,18 @@ The core Terraform workflow consists of three stages:
 
 ## Creating ec2 instance using Terraform 
 
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+
+Provider Configuration:
+```
+provider "aws" {
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+}
+```
+
+Environment variables:
 securing aws keys while using terraform:
 
 - edit the system environment variables
