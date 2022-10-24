@@ -262,9 +262,6 @@ resource "aws_instance" "app_instance" {
     key_name = "eng122-ayanle1"
 }
 
-
-# git branch -M main 
-
 ```
 
 ## create variable.tf file for abstraction
