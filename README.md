@@ -70,14 +70,17 @@ The core Terraform workflow consists of three stages:
 
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
-Provider Configuration:
-```
-provider "aws" {
-  region     = "us-west-2"
-  access_key = "my-access-key"
-  secret_key = "my-secret-key"
-}
-```
+Authentication and Configuration
+
+Configuration for the AWS Provider can be derived from several sources, which are applied in the following order:
+- Parameters in the provider configuration
+- Environment variables
+- Shared credentials files
+- Shared configuration files
+- Container credentials
+- Instance profile credentials and region
+
+This order matches the precedence used by the AWS CLI and the AWS SDKs.
 
 Environment variables:
 securing aws keys while using terraform:
@@ -88,9 +91,8 @@ securing aws keys while using terraform:
 
 ### Creating terraform script 
 - create main.tf file 
-- who is cloud provider and region > terraform init
-- `terraform init`
-- create block of code to launch ec2 server 
+- detail who is the cloud provider and region > then `terraform init`
+- Aim: create block of code to launch ec2 server 
 
 ```
 # who is the cloud provider
@@ -131,7 +133,7 @@ resource "aws_instance" "app_instance" {
 }
 ```
 
-- `terraform plan` - always do first to check syntax etc etc 
+- `terraform plan` - always do first to check syntax
 - `terraform apply` - launch ec2
 
 ![image](https://user-images.githubusercontent.com/104793540/189106442-d8736188-052f-47ba-a797-2c042e9b4bfb.png)
@@ -150,7 +152,6 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 - `terraform destroy` to delete your instance
 
 Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
-
 
 ### EC2 Instance with Configured: VPC,Subnets,Internet Gateway and Route Tables
 - Perform the steps below in main.tf in order to successfuly launch of EC2 instance with configured network settings
