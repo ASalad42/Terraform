@@ -89,7 +89,7 @@ securing aws keys while using terraform:
  
 ![image](https://user-images.githubusercontent.com/104793540/189106192-b9b302ac-a2c8-4072-be02-6262b5d205de.png)
 
-### Creating terraform script 
+### Write, Plan, Apply 
 - create main.tf file 
 - detail who is the cloud provider and region > then `terraform init`
 - Aim: create block of code to launch ec2 server 
