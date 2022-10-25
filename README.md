@@ -275,5 +275,14 @@ To minimise displaying any potential data, refactor the main.tf script by creati
 - terraform stores the state of the infastructure that is being created from the TF files
 - this state allows terraform to map real world resource to your existing configuration (done behind the scenes in the state file) 
 - the exact running data of the deployed resources are kept in the .tfstate file!
+- best practice to avoid touching this file and making changes (also store backup of this file)
 
 ![image](https://user-images.githubusercontent.com/104793540/197756836-55d622fe-d6e6-4784-9dfb-00b8f8c033ac.png)
+
+
+### Desired state and current state 
+- terraform's primary function is to create, modify, and destroy infastructure resources to match the desired state described in a terraform configuration 
+
+![image](https://user-images.githubusercontent.com/104793540/197759793-4bf55578-cb8f-4533-a30d-f4b021f43a47.png)
+
+- The current state is the actual state of a resource that is currently deployed i.e t2.medium 
