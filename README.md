@@ -295,3 +295,10 @@ To minimise displaying any potential data, refactor the main.tf script by creati
 
 **Provider versioning:** For production use, you should constrain the acceptable provider versions via configuration, to ensure that new versions with breaking changes will not be automatically installed
 
+There are multiple ways of specifying the version of a provider:
+
+![image](https://user-images.githubusercontent.com/104793540/197775382-b2d89738-3985-4146-8544-27307e96f198.png)
+
+- Not recommended to use ~>x.0 for production as later versions may not work with your application
+- Lock file has contrained version so if someone tries to configuration and terraform init it will not allow. 
+
