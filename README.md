@@ -267,3 +267,13 @@ resource "aws_instance" "app_instance" {
 ## create variable.tf file for abstraction
 
 To minimise displaying any potential data, refactor the main.tf script by creating a new variable.tf script defining all the key parameters so only necessary information is displayed. The variable script must be added .gitignore file.
+
+
+## Notes
+
+### Terraform State file .tfstate
+- terraform stores the state of the infastructure that is being created from the TF files
+- this state allows terraform to map real world resource to your existing configuration (done behind the scenes in the state file) 
+- the exact running data of the deployed resources are kept in the .tfstate file!
+
+![image](https://user-images.githubusercontent.com/104793540/197756836-55d622fe-d6e6-4784-9dfb-00b8f8c033ac.png)
