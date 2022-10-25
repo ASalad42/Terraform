@@ -152,6 +152,7 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 - `terraform destroy` to delete all
 - for specfific resource use Terraform destroy -target resource type + local resource name i.e `Terraform destroy -target aws_instance.myec2`
 - `terraform refresh`
+- `terraform init -upgrade` version matches to latest
 
 Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
 
@@ -300,5 +301,13 @@ There are multiple ways of specifying the version of a provider:
 ![image](https://user-images.githubusercontent.com/104793540/197775382-b2d89738-3985-4146-8544-27307e96f198.png)
 
 - Not recommended to use ~>x.0 for production as later versions may not work with your application
-- Lock file has contrained version so if someone tries to configuration and terraform init it will not allow. 
+- Dependency Lock file has contrained version so if someone tries to configuration and terraform init it will not allow. 
 
+### Read, Generate, Modify Configs
+- always use different folders for use cases to be more systematic and for easier revisit 
+
+Attributes & Output values:
+- Terraform has the capability to output the attribute of a resource with the output values.
+- **An outputed attributes can not only be used for the user reference but it can also act as an input
+to other resources being created via terraform**
+-  for example - After EIP gets created, it’s IP address should automatically get whitelisted in the security group.
