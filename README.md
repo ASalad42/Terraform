@@ -286,3 +286,6 @@ To minimise displaying any potential data, refactor the main.tf script by creati
 ![image](https://user-images.githubusercontent.com/104793540/197759793-4bf55578-cb8f-4533-a30d-f4b021f43a47.png)
 
 - The current state is the actual state of a resource that is currently deployed i.e t2.medium 
+- Terraform tries to ensure that the deployed infrastructure is based on the desired state. If there is a difference between the two, terraform plan presents a description of the changes necessary to achieve the desired state. 
+- then terraform apply changes back to desired i.e from t2.medium to t2.micro and change visible on aws console!
+
