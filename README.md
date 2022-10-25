@@ -292,3 +292,6 @@ To minimise displaying any potential data, refactor the main.tf script by creati
 - then terraform apply changes back to desired i.e from t2.medium to t2.micro and change visible on aws console!
 - in config file, recommended to detail all the key things you need for your resource (so always matches your desired state) and whatever you specifiy here will be part of the desired state so if any changes occour here. Terraform plan will not show you details to revert this change. 
 
+
+**Provider versioning:** For production use, you should constrain the acceptable provider versions via configuration, to ensure that new versions with breaking changes will not be automatically installed
+
