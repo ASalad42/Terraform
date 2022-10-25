@@ -49,7 +49,23 @@ The core Terraform workflow consists of three stages:
 - Terraform's state allows you to track resource changes throughout your deployments.
 - You can commit your configurations to version control to safely collaborate on infrastructure.
 
-### IAC (infastructure orchestration = terraform) & Configuration Management (ansible) = Friends 
+### IAC (infrastructure orchestration = terraform) & Configuration Management (ansible) = Friends 
+
+**Infrastructure as Code (IaC)** and **Configuration Management (CM)** go hand and hand when it comes to cloud computing. IaC manages infrastructure using a descriptive model. Infrastructure includes networks, virtual machines, load balancers, to name a few. **An IaC model produces the same environment every time it is applied.**
+
+Configuration Management (CM) **maintains the consistency of an application’s performance, as well as its functional and physical inputs along with requirements, overall design, and operations throughout the lifespan of the product.**
+
+| Infrastructure as Code  | Configuration Management |
+| ------------- | ------------- |
+| Terraform  | Ansible |
+| AWS CloudFormation | AWS OpsWorks |
+| Azure Resource Manager | Microsoft System Center Configuration Manager |
+| Google Cloud Deployment Manager | Puppet|
+|  | Chef |
+|  | Saltstack |
+
+
+REF: https://blog.datanextsolutions.com/infrastructure-as-code-iac-and-configuration-management-cm-583be1687c6d
 
 ![image](https://user-images.githubusercontent.com/104793540/197222488-c908eb92-3425-42b2-acb9-84d69485e33e.png)
 
