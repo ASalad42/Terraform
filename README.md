@@ -149,7 +149,9 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 - `terraform init` in the directory that you've made the 'main.tf' file
 - `terraform plan` checks code, always do first to check your code before actually launching whatever your doing. Using the whole 'measure twice, cut one' methodology
 - `terraform apply` to launch your instance, as configured in your main.tf file.
-- `terraform destroy` to delete your instance
+- `terraform destroy` to delete all
+- for specfific resource use Terraform destroy -target resource type + local resource name i.e `Terraform destroy -target aws_instance.myec2`
+- `terraform refresh`
 
 Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
 
@@ -288,4 +290,5 @@ To minimise displaying any potential data, refactor the main.tf script by creati
 - The current state is the actual state of a resource that is currently deployed i.e t2.medium 
 - Terraform tries to ensure that the deployed infrastructure is based on the desired state. If there is a difference between the two, terraform plan presents a description of the changes necessary to achieve the desired state. 
 - then terraform apply changes back to desired i.e from t2.medium to t2.micro and change visible on aws console!
+- in config file, recommended to detail all the key things you need for your resource (so always matches your desired state) and whatever you specifiy here will be part of the desired state so if any changes occour here. Terraform plan will not show you details to revert this change. 
 
