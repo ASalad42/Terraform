@@ -308,6 +308,15 @@ There are multiple ways of specifying the version of a provider:
 
 Attributes & Output values:
 - Terraform has the capability to output the attribute of a resource with the output values.
+```
+resource "aws_eip" "lb" {
+  vpc      = true
+}
+
+output "eip" {
+  value = aws_eip.lb
+}
+```
 - **An outputed attributes can not only be used for the user reference but it can also act as an input
 to other resources being created via terraform**
 -  for example - After EIP gets created, it’s IP address should automatically get whitelisted in the security group.
