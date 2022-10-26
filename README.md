@@ -330,9 +330,10 @@ resource "aws_eip" "lb" {
 }
 
 output "eip" {
-  value = aws_eip.lb
+  value = aws_eip.lb.public_ip
 }
 ```
+- `terraform apply` > outputs will be displayed (**very useful feature** as it allows you see without going to console)(value = resourcename.nameigive.attribute)(in documentation check attributes reference)(leave blank for all attributes)
 - **An outputed attributes can not only be used for the user reference but it can also act as an input
 to other resources being created via terraform**
 -  for example - After EIP gets created, it’s IP address should automatically get whitelisted in the security group.
