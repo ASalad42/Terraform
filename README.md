@@ -372,9 +372,9 @@ resource "aws_security_group" "var_example" {
 ```
 
 Variables in Terraform can be assigned values in multiple ways. Some of these include:
-- Environment variables: `export TF_VAR_instancetype="t2.nano" then  echo $TF_VAR`
+- Environment variables: `export TF_VAR_instancetype="t2.nano" then  echo $TF_VAR` (load new cmd prompt)
 - Command Line Flags: `terraform plan -var="instancetype=t2.small"`
-- From a File (terraform.tfvars): `instancetype="t2.micro"` (**prod env**)
+- From a File (terraform.tfvars): `instancetype="t2.micro"` (**prod env**) (`terraform plan` will use this and overwrite the default)
 - Variable Defaults:  `variable "instancetype" { default = "t2.micro"}` or leave blank and insert during prompt. (**prod env**)
 
 ####
