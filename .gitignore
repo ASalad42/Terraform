@@ -1,6 +1,0 @@
-.terraform.lock.hcl
-.terraform/
-terraform.exe
-terraform.tfstate
-terraform.tfstate.backup
-C:/Users/Ayan/IaC_Ansible/Orchestration with Terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/4.29.0/windows_amd64/terraform-provider-aws_v4.29.0_x5.exe
