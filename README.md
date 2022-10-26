@@ -322,7 +322,7 @@ There are multiple ways of specifying the version of a provider:
 ### Read, Generate, Modify Configs
 - always use different folders for use cases to be more systematic and for easier revisit 
 
-Attributes & Output values:
+#### Attributes & Output values:
 - Terraform has the capability to output the attribute of a resource with the output values.
 ```
 resource "aws_eip" "lb" {
@@ -337,3 +337,41 @@ output "eip" {
 - **An outputed attributes can not only be used for the user reference but it can also act as an input
 to other resources being created via terraform**
 -  for example - After EIP gets created, it’s IP address should automatically get whitelisted in the security group.
+
+#### Cross-Resource Attributes:
+- EIP & EC2 example > auto attach eip to ec2 on launch > aws_eip_association 
+```
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.myec2.id
+  allocation_id = aws_eip.lb.id
+}
+```
+#### Terraform Variables 
+more static code = more work so use variables to save time and account for change in the future 
+
+in variables.tf file:
+```
+variable "vpn_ip" {
+  default = "116.50.30.50/32"
+}
+```
+- during update only change variable.tf file instead of going into working file and manually changing all.
+
+in working file:
+```
+resource "aws_security_group" "var_example" {
+  name        = "ayanle-variables"
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = [var.vpn_ip]
+  }
+
+```
+####
+####
+####
+####
+####
