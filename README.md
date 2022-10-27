@@ -377,6 +377,9 @@ Variables in Terraform can be assigned values in multiple ways. Some of these in
 - From a File (terraform.tfvars): `instancetype="t2.micro"` (**prod env**) (`terraform plan` will use this and overwrite the default)
 - Variable Defaults:  `variable "instancetype" { default = "t2.micro"}` or leave blank and insert during prompt. (**prod env**)
 
+#### Data types for variables
+![image](https://user-images.githubusercontent.com/104793540/198274631-30ffd78d-f8cc-4b7d-a931-822f69fab040.png)
+
 ####
 ####
 ####
