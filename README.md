@@ -380,6 +380,28 @@ Variables in Terraform can be assigned values in multiple ways. Some of these in
 #### Data types for variables
 ![image](https://user-images.githubusercontent.com/104793540/198274631-30ffd78d-f8cc-4b7d-a931-822f69fab040.png)
 
+variables.tf
+```
+
+variable "elb_name" {
+  type = string
+}
+
+variable "az" {
+  type = list
+}
+
+variable "timeout" {
+  type = number
+}
+```
+
+terraform.tfvars
+```
+elb_name="myelb"
+timeout="400"
+az=["us-west-1a","us-west-1b"]
+```
 ####
 ####
 ####
