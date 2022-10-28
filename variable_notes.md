@@ -51,8 +51,6 @@ echo $TF_VAR
 ```
 provider "aws" {
   region     = "us-west-2"
-  access_key = "YOUR-KEY"
-  secret_key = "YOUR-KEY"
 }
 
 resource "aws_instance" "myec2" {
