@@ -420,7 +420,31 @@ resource "aws_iam_user" "lb" {
 ```
 
 #### Terraform Functions 
+documentation: built-in functions section 
+
 - `terraform console`
-####
+
+#### Data Source
+- Data sources allow data to be fetched or computed for use elsewhere in Terraform
+configuration.
+- A data source is defined under the data block.
+
+```
+data "aws_ami" "app_ami" {
+  most_recent = true
+  owners = ["amazon"]
+
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm*"]
+  }
+}
+
+resource "aws_instance" "instance-1" {
+    ami = data.aws_ami.app_ami.id
+   instance_type = "t2.micro"
+}
+```
 ####
 ####
