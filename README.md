@@ -331,12 +331,19 @@ There are multiple ways of specifying the version of a provider:
 #### Attributes & Output values:
 - Terraform has the capability to output the attribute of a resource with the output values.
 ```
-resource "aws_eip" "lb" {
-  vpc      = true
+resource "aws_iam_user" "lb" {
+  name = "demo-user.${count.index}"
+  count = 3
+  path = "/system/"
 }
 
-output "eip" {
-  value = aws_eip.lb.public_ip
+output "arns" {
+  value = aws_iam_user.lb[*].arn
+}
+
+
+output "zipmap" {
+  value = zipmap(aws_iam_user.lb[*].name, aws_iam_user.lb[*].arn)
 }
 ```
 - `terraform apply` > outputs will be displayed (**very useful feature** as it allows you see without going to console)(value = resourcename.nameigive.attribute)(in documentation check attributes reference)(leave blank for all attributes)
@@ -457,8 +464,9 @@ resource "aws_instance" "instance-1" {
 
 ![image](https://user-images.githubusercontent.com/104793540/199026521-30bf8361-015f-49f4-b32d-c62fb352a8a6.png)
 
+DO NOT USE IN PRODUCTION ENV (ONLY FOR MY EASE OF USE)
 - setting refresh to false `terraform plan -refresh=false`
 - Specify the Target: `terraform plan -refresh=false -target=resource.name` flag can be used to target a specific resource.
 
 ####
-- 
+
