@@ -171,6 +171,10 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 - `terraform init -upgrade` version matches to latest
 - `terraform fmt` sorts format
 - `terraform validate` checks syntax 
+- `terraform taint resource.name` (i.e aws_instance.myec2)(careful as in next plan destroyed)
+- `terraform graph > graph.dot` - generate a visual representation of either a configuration or execution plan - graphviz.gitlab.io (create graph.svg image)
+- `terrform plan -out=examplepath` for terraform plan file so then use `terraform apply examplepath`
+- `terraform output iam_names` used to extract value of an output variable from state file 
 
 Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
 
@@ -448,5 +452,13 @@ resource "aws_instance" "instance-1" {
    instance_type = "t2.micro"
 }
 ```
+#### Dealing with Larger Infrastructure 
+- important to switch to a smaller configurations were each can be applied independently
+
+![image](https://user-images.githubusercontent.com/104793540/199026521-30bf8361-015f-49f4-b32d-c62fb352a8a6.png)
+
+- setting refresh to false `terraform plan -refresh=false`
+- Specify the Target: `terraform plan -refresh=false -target=resource.name` flag can be used to target a specific resource.
+
 ####
-####
+- 
