@@ -169,6 +169,8 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 - for specfific resource use Terraform destroy -target resource type + local resource name i.e `Terraform destroy -target aws_instance.myec2`
 - `terraform refresh`
 - `terraform init -upgrade` version matches to latest
+- `terraform fmt` sorts format
+- `terraform validate` checks syntax 
 
 Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
 
