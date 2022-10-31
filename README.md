@@ -402,8 +402,25 @@ elb_name="myelb"
 timeout="400"
 az=["us-west-1a","us-west-1b"]
 ```
-####
-####
+
+#### Count 
+- With the count parameter, we can simply specify the count value and the resource can be
+scaled accordingly.(all same name though)
+- count.index allows us to fetch the index of each iteration in the loop. combine with variable
+```
+variable "elb_names" {
+  type = list
+  default = ["dev-loadbalancer", "stage-loadbalanacer","prod-loadbalancer"]
+}
+resource "aws_iam_user" "lb" {
+  name = var.elb_names[count.index]
+  count = 3
+  path = "/system/"
+}
+```
+
+#### Terraform Functions 
+- `terraform console`
 ####
 ####
 ####
