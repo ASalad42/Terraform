@@ -468,5 +468,41 @@ DO NOT USE IN PRODUCTION ENV (ONLY FOR MY EASE OF USE)
 - setting refresh to false `terraform plan -refresh=false`
 - Specify the Target: `terraform plan -refresh=false -target=resource.name` flag can be used to target a specific resource.
 
-####
+#### Provisioners
+Provisioners are used to execute scripts on a local or remote machine as part of resource
+creation or destruction.
+- create ec2 > install nginx
+- provisioner local-exec & remote-exec {} (inside resource block)
+- creation -time provisioner & destroy-type provisioner 
+- on_failure = continue/fail
+- null resource: The null_resource implements the standard resource lifecycle but takes no further action
 
+```
+resource "aws_instance" "myec2" {
+   ami = "ami-0ca285d4c2cda3300"
+   instance_type = "t2.micro"
+   key_name = "terraform-key"
+
+   connection {
+   type     = "ssh"
+   user     = "ec2-user"
+   private_key = file("./terraform-key.pem")
+   host     = self.public_ip
+    }
+
+ provisioner "remote-exec" {
+   inline = [
+     "sudo amazon-linux-extras install -y nginx1",
+     "sudo systemctl start nginx"
+   ]
+ }
+}
+```
+
+- terraform init
+- terraform plan
+- terraform apply -auto-approve
+- terraform destroy -auto-approve
+
+#### Terraform Modules
+centralised source where code is stored and can be fetched.
