@@ -506,3 +506,8 @@ resource "aws_instance" "myec2" {
 
 #### Terraform Modules
 centralised source where code is stored and can be fetched.
+
+![image](https://user-images.githubusercontent.com/104793540/199722501-944df0cf-e505-4a12-b534-e1243e8f1362.png)
+![image](https://user-images.githubusercontent.com/104793540/199722311-16d2823c-9474-4f0e-ad30-0088539830fa.png)
+
+- `terraform init` > `terraform plan`
