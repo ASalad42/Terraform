@@ -510,4 +510,14 @@ centralised source where code is stored and can be fetched.
 ![image](https://user-images.githubusercontent.com/104793540/199722501-944df0cf-e505-4a12-b534-e1243e8f1362.png)
 ![image](https://user-images.githubusercontent.com/104793540/199722311-16d2823c-9474-4f0e-ad30-0088539830fa.png)
 
-- `terraform init` > `terraform plan`
+- in project: `terraform init` > `terraform plan`
+- challange: One common need for infrastructure management is to build environments like staging, production with a similar setup but keeping environment variables different.
+
+![image](https://user-images.githubusercontent.com/104793540/199723401-9423555b-b681-433f-a733-ec157ff2483d.png)
+
+- Solution: using var and variables.tf fille with instance_type = var.instance_type
+- Recommended to Use Locals with Modules to maintain code: Instead of variables, you can make use of locals to assign the values and users cannot override it 
+
+![image](https://user-images.githubusercontent.com/104793540/199730595-0f355ec1-6627-43cb-9629-4d5d245706d1.png)
+
+- Module Outputs: 
