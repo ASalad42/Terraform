@@ -520,4 +520,4 @@ centralised source where code is stored and can be fetched.
 
 ![image](https://user-images.githubusercontent.com/104793540/199730595-0f355ec1-6627-43cb-9629-4d5d245706d1.png)
 
-- Module Outputs: 
+- Module Outputs (accessing child module outputs): In a parent module, outputs of child modules are available in expressions as module.<MODULE NAME>.<OUTPUT NAME>
