@@ -175,6 +175,7 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_
 - `terraform graph > graph.dot` - generate a visual representation of either a configuration or execution plan - graphviz.gitlab.io (create graph.svg image)
 - `terrform plan -out=examplepath` for terraform plan file so then use `terraform apply examplepath`
 - `terraform output iam_names` used to extract value of an output variable from state file 
+- `terraform workspace -h`    `terraform workspace show`    `terraform workspace select dev`
 
 Note: yes in the commandline, when prompted (usually with Terraform plan & terraform apply)
 
