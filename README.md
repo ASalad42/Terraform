@@ -1,6 +1,5 @@
 # IaC with Terraform 
 
-
 ![image](https://user-images.githubusercontent.com/104793540/197299626-af56ea45-e547-49eb-a2f8-fe005f932303.png)
 ![image](https://user-images.githubusercontent.com/104793540/189126425-2554fc30-88f7-4ef4-a691-0daa34521972.png)
 
