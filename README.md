@@ -63,7 +63,6 @@ Configuration Management (CM) **maintains the consistency of an application’s 
 |  | Chef |
 |  | Saltstack |
 
-
 REF: https://blog.datanextsolutions.com/infrastructure-as-code-iac-and-configuration-management-cm-583be1687c6d
 
 ![image](https://user-images.githubusercontent.com/104793540/197222488-c908eb92-3425-42b2-acb9-84d69485e33e.png)
