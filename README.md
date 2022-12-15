@@ -19,7 +19,6 @@ IaC is a key DevOps practice and is used in conjunction with continuous delivery
 - Improve infrastructure consistency
 - Eliminate configuration drift
 
-
 REF: https://apiumhub.com/tech-blog-barcelona/infrastructure-as-code-benefits-and-tools/
 
 ## Tools Available for IaC 
